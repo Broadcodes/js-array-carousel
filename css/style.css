@@ -33,10 +33,11 @@ body {
 }
 
 .areaPulsanti{
-    width: calc(100% - 40px);
-    margin: 0 auto;
+    height: calc(100% - 40px);
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
