@@ -8,40 +8,22 @@ body {
     font-family: sans-serif;
 }
 
-.container{
+.container {
     max-width: 1200px;
     margin: 100px auto;
 }
 
-.areaImmaginiCarosello{
+.areaImmaginiCarosello {
     display: flex;
     height: 70vh;
 }
 
-#carosello{
+.areaImmagini{
     flex-basis: 80%;
     position: relative;
 }
 
-#anteprima{
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-}
-
-#anteprima img{
-    width: 100%;
-    height: calc(100% / 5);
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-
-#anteprima img.active{
-    border: 2px solid #fff;
-    filter: none;
-}
-
-.areaImmagini .immagine{
+.areaImmagini .immagine {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -51,31 +33,51 @@ body {
     display: none;
 }
 
-.areaImmagini .immagine.active{
+.areaImmagini .immagine.active {
     display: inline-block;
 }
 
-.areaPulsanti{
-    height: calc(100% - 40px);
+#anteprimaImmaginiMiniatura {
+    flex-basis: 20%;
+}
+
+.anteprima{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.anteprima img {
+    width: 100%;
+    height: calc(100% / 5);
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.anteprima img.active {
+    border: 2px solid #fff;
+    filter: none;
+}
+
+.areaPulsanti {
+    height: calc(100% - 20px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     position: relative;
-    top: 50%;
+    top: -50%;
+    align-items: center;
     transform: translateY(-50%);
 }
 
-.areaPulsanti .pulsante{
-    width: 50px;
-    height: 50px;
-    vertical-align: middle;
-    line-height: 50px;
-    font-size: 1.6rem;
+.areaPulsanti .pulsante {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
     border-radius: 50px;
     border: none;
 }
 
-.areaPulsanti .pulsante:hover{
+.areaPulsanti .pulsante:hover {
     background-color: rgb(211, 211, 211);
 }

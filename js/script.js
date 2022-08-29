@@ -2,7 +2,7 @@
 const listaImmagini = ["01", "02", "03", "04", "05"];
 
 const areaImmagini = document.querySelector(".areaImmagini");
-const anteprimaImmagini = document.getElementById("anteprima");
+const anteprimaImmagini = document.querySelector(".anteprima");
 
 for (let i = 0; i < listaImmagini.length; i++) {
 
