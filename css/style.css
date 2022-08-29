@@ -51,7 +51,3 @@ body {
     border-radius: 50px;
     border: none;
 }
-
-.areaPulsanti .pulsante:hover{
-   background-color: rgb(205, 205, 205);
-}
