@@ -10,12 +10,35 @@ body {
 
 .container{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 100px auto;
+}
+
+.areaImmaginiCarosello{
+    display: flex;
+    height: 70vh;
 }
 
 #carosello{
-    height: 70vh;
+    flex-basis: 80%;
     position: relative;
+}
+
+#anteprima{
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+#anteprima img{
+    width: 100%;
+    height: calc(100% / 5);
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+#anteprima img.active{
+    border: 2px solid #fff;
+    filter: none;
 }
 
 .areaImmagini .immagine{
