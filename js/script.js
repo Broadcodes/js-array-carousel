@@ -13,33 +13,41 @@ for (let i = 0; i < listaImmagini.length; i++) {
         visualizzaImmagine = `immagine`;
     }
 
-    areaImmagini.innerHTML += `<img class="${visualizzaImmagine}" src="img/${listaImmagini[i]}.jpg" alt="${listaImmagini[i]}">`
+    areaImmagini.innerHTML += `<img id="image${listaImmagini[i]}"" class="${visualizzaImmagine}" src="img/${listaImmagini[i]}.jpg" alt="Image ${listaImmagini[i]}">`
 }
 
 const pulsanteIndietro = document.getElementById("indietro");
 const pulsanteAvanti = document.getElementById("avanti");
 
-pulsanteIndietro.addEventListener("click", function(){
+pulsanteIndietro.addEventListener("click", function () {
     // Recupero dell'immagine attiva dall'html
     const immagineAttiva = document.querySelector('.immagine.active');
     // Assegnazione dell'immagine precedente
-    const immaginePrecedente = immagineAttiva.previousElementSibling;
+    let immaginePrecedente = immagineAttiva.previousElementSibling;
 
     // Condizione che rimuove la classe active dall'immagine attuale per assegnarlo all'immagine precedente
-    if (immaginePrecedente){
+    if (immaginePrecedente != null) {
         immagineAttiva.classList.remove('active');
         immaginePrecedente.classList.add('active');
+    } else {
+        immagineAttiva.classList.remove('active');
+        const ultimaImmagineArray = document.getElementById("image05");
+        ultimaImmagineArray.classList.add('active');
     }
 });
 
-pulsanteAvanti.addEventListener("click", function(){
+pulsanteAvanti.addEventListener("click", function () {
     const immagineAttiva = document.querySelector('.immagine.active');
     // Assegnazione dell'immagine successiva
     const immagineSuccessiva = immagineAttiva.nextElementSibling;
 
     // Condizione che rimuove la classe active dall'immagine attuale per assegnarlo all'immagine successiva
-    if (immagineSuccessiva){
+    if (immagineSuccessiva != null) {
         immagineAttiva.classList.remove('active');
         immagineSuccessiva.classList.add('active');
+    } else {
+        immagineAttiva.classList.remove('active');
+        const primaImmagineArray = document.getElementById("image01");
+        primaImmagineArray.classList.add('active');
     }
 });
