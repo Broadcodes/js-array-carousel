@@ -16,3 +16,30 @@ for (let i = 0; i < listaImmagini.length; i++) {
     areaImmagini.innerHTML += `<img class="${visualizzaImmagine}" src="img/${listaImmagini[i]}.jpg" alt="${listaImmagini[i]}">`
 }
 
+const pulsanteIndietro = document.getElementById("indietro");
+const pulsanteAvanti = document.getElementById("avanti");
+
+pulsanteIndietro.addEventListener("click", function(){
+    // Recupero dell'immagine attiva dall'html
+    const immagineAttiva = document.querySelector('.immagine.active');
+    // Assegnazione dell'immagine precedente
+    const immaginePrecedente = immagineAttiva.previousElementSibling;
+
+    // Condizione che rimuove la classe active dall'immagine attuale per assegnarlo all'immagine precedente
+    if (immaginePrecedente){
+        immagineAttiva.classList.remove('active');
+        immaginePrecedente.classList.add('active');
+    }
+});
+
+pulsanteAvanti.addEventListener("click", function(){
+    const immagineAttiva = document.querySelector('.immagine.active');
+    // Assegnazione dell'immagine successiva
+    const immagineSuccessiva = immagineAttiva.nextElementSibling;
+
+    // Condizione che rimuove la classe active dall'immagine attuale per assegnarlo all'immagine successiva
+    if (immagineSuccessiva){
+        immagineAttiva.classList.remove('active');
+        immagineSuccessiva.classList.add('active');
+    }
+});
